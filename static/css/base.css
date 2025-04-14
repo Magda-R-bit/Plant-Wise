@@ -4,6 +4,15 @@ html, body {
     height: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -15,7 +24,7 @@ h1, h2, h3, .site-title {
 /* Navbar */
 
 .navbar {
-    background-color: #f3fff1; /* light greenish background */
+    background-color: #f3fff1;
     border-bottom: 2px solid #d4edda;
 }
 
@@ -64,12 +73,51 @@ h1, h2, h3, .site-title {
 
 /* Logo */
 .logo-img {
-    width: 90px; /* Adjust the size of the logo */
+    width: 90px;
     height: auto;
-    margin-right: 10px; /* Space between logo and text */
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer-icons {
+    font-size: 0;
+}
+
+.font-icons i {
+    font-size: 2rem;
+    color: #198754;
+}
+
+.footer-icons a:hover {
+    color: #198754;
+  }
+
+.footer-icons a {
+    color: #2d6a4f;
+    transition: color 0.2s ease-in-out;
+}
+
+     /* Mailchimp */
+.refferal_badge {
+    z-index: 9999;
+    position: fixed;
+    transform: translateY(-50%);
+    background-color: #198754;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 93px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 8px;
 }
 
 
+/* Media Queries */
 
 @media (max-width: 1200px) {
     .navbar .form-control {
