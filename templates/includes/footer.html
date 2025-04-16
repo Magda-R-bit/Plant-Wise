@@ -31,12 +31,56 @@
         </div>
       </div>
 
-      <!-- Links -->
+      <!-- Privacy Policy Modal -->
       <div class="col-md-4 mb-3">
-        <h6 class="fw-semibold">Quick Link</h6>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-dark">Privacy Policy</a></li>
+          <li>
+            <a
+              href="#"
+              class="text-dark"
+              data-bs-toggle="modal"
+              data-bs-target="#privacyPolicyModal"
+            >
+              <h6 class="fw-semibold">Privacy Policy</h6>
+            </a>
+          </li>
         </ul>
+        <!-- Privacy Policy Modal -->
+        <div
+          class="modal fade"
+          id="privacyPolicyModal"
+          tabindex="-1"
+          aria-labelledby="privacyPolicyLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="privacyPolicyLabel">
+                  Privacy Policy for Plant Wise
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                {% include "includes/privacy.html" %}
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Mailchimp Newsletter -->
@@ -44,63 +88,66 @@
       <div id="mc_embed_shell" class="col-md-4 mb-3">
         <div class="col-md-6 mb-3">
           <h6 class="fw-semibold">Subscribe to our Newsletter</h6>
-            <form
+          <form
             action="https://gmail.us17.list-manage.com/subscribe/post?u=cb2c6a93135f8e815ce1440f5&amp;id=0eadb86777&amp;f_id=00d9c3e1f0"
             method="post"
             target="_blank"
             novalidate
             class="small-form"
-            >
+          >
             <label for="mce-EMAIL" class="form-label small"
               ><span class="text-danger">*</span> Email Address
             </label>
             <div class="input-group input-group-sm">
               <input
-              type="email"
-              name="EMAIL"
-              class="form-control form-control-sm"
-              placeholder="Your email"
-              required
+                type="email"
+                name="EMAIL"
+                class="form-control form-control-sm"
+                placeholder="Your email"
+                required
               />
               <button class="btn btn-success btn-sm" type="submit">📩</button>
             </div>
-            <small class="text-muted mt-1 mb-2 d-block" style="font-size: 0.6rem;">
+            <small
+              class="text-muted mt-1 mb-2 d-block"
+              style="font-size: 0.6rem"
+            >
               <span class="text-danger">*</span> indicates required
             </small>
 
             <div id="mce-responses" class="clear foot">
               <div
-              class="response small"
-              id="mce-error-response"
-              style="display: none"
+                class="response small"
+                id="mce-error-response"
+                style="display: none"
               ></div>
               <div
-              class="response small"
-              id="mce-success-response"
-              style="display: none"
+                class="response small"
+                id="mce-success-response"
+                style="display: none"
               ></div>
             </div>
             <div aria-hidden="true" style="position: absolute; left: -5000px">
               <input
-              type="text"
-              name="b_cb2c6a93135f8e815ce1440f5_0eadb86777"
-              tabindex="-1"
-              value=""
+                type="text"
+                name="b_cb2c6a93135f8e815ce1440f5_0eadb86777"
+                tabindex="-1"
+                value=""
               />
             </div>
             <div class="clear foot">
               <a
-              href="http://eepurl.com/jcqSlg"
-              title="Mailchimp - email marketing made easy and fun"
+                href="http://eepurl.com/jcqSlg"
+                title="Mailchimp - email marketing made easy and fun"
               >
-              <img
-                class="refferal_badge"
-                src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
-                alt="Intuit Mailchimp"
-              />
+                <img
+                  class="refferal_badge"
+                  src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                  alt="Intuit Mailchimp"
+                />
               </a>
             </div>
-            </form>
+          </form>
         </div>
       </div>
     </div>
