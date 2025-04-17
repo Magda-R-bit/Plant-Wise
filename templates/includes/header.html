@@ -8,7 +8,7 @@
         <a class="navbar-brand" href="/">
           <img src="{% static 'images/logo.png' %}" alt="Plant Wise logo" class="logo-img">
         </a>
-        <a class="navbar-brand fw-bold text-success me-2" href="#">Plant Wise</a>
+        <a class="navbar-brand fw-bold text-success me-2" href="{% url 'home' %}">Plant Wise</a>
       </div>
 
       <div
@@ -17,7 +17,7 @@
       >
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -41,7 +41,7 @@
             <a class="nav-link" href="#">Tips & Guides</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">About</a>
+            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -52,10 +52,10 @@
       <div class="d-flex align-items-center">
         <span
           id="searchToggle"
-          class="btn btn-outline-success me-2"
+            class="btn btn-outline-secondary me-2"
           style="cursor: pointer"
         >
-          🔍
+        <i class="bi bi-search" style="color: green;"></i>
         </span>
 
         <div
@@ -78,7 +78,7 @@
 
         <a href="#" class="btn btn-outline-secondary me-2" title="Cart"> 🛒 </a>
         <a href="#" class="btn btn-outline-secondary me-2" title="Wishlist">
-          ❤️
+          💚
         </a>
 
         <div class="dropdown">
