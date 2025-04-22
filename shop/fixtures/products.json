@@ -1,0 +1,200 @@
+[
+    {
+      "model": "shop.product",
+      "pk": 1,
+      "fields": {
+        "name": "Carrot Organic Seed",
+        "slug": "carrot",
+        "category": 1,
+        "price": 2.80,
+        "description": "Crunchy and sweet carrots, perfect for snacking and cooking.",
+        "available": true,
+        "stock": 40
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 2,
+      "fields": {
+        "name": "Beetroot Organic Seed",
+        "slug": "beetroot",
+        "category": 1,
+        "price": 2.80,
+        "description": "Rich in nutrients, great for salads and juices.",
+        "available": true,
+        "stock": 30
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 3,
+      "fields": {
+        "name": "Tomato Organic Seed",
+        "slug": "tomato",
+        "category": 1,
+        "price": 2.95,
+        "description": "Juicy red tomatoes, ideal for sauces and salads.",
+        "available": true,
+        "stock": 50
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 4,
+      "fields": {
+        "name": "Cucumber Organic Seed",
+        "slug": "cucumber",
+        "category": 1,
+        "price": 2.95,
+        "description": "Refreshing cucumbers, great for summer dishes.",
+        "available": true,
+        "stock": 20
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 5,
+      "fields": {
+        "name": "Lettuce Organic Seed",
+        "slug": "lettuce",
+        "category": 1,
+        "price": 2.95,
+        "description": "Crisp and green lettuce, perfect base for salads.",
+        "available": true,
+        "stock": 25
+      }
+    },
+  
+    {
+      "model": "shop.product",
+      "pk": 6,
+      "fields": {
+        "name": "Basil Organic Seed",
+        "slug": "basil",
+        "category": 2,
+        "price": 2.80,
+        "description": "Fragrant herb, essential in Italian cooking.",
+        "available": true,
+        "stock": 35
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 7,
+      "fields": {
+        "name": "Rosemary Organic Seed",
+        "slug": "rosemary",
+        "category": 2,
+        "price": 2.80,
+        "description": "Woody and aromatic, ideal for roasts.",
+        "available": true,
+        "stock": 30
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 8,
+      "fields": {
+        "name": "Thyme Organic Seed",
+        "slug": "thyme",
+        "category": 2,
+        "price": 2.80,
+        "description": "Earthy flavor that blends well with many dishes.",
+        "available": true,
+        "stock": 35
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 9,
+      "fields": {
+        "name": "Oregano Organic Seed",
+        "slug": "oregano",
+        "category": 2,
+        "price": 2.95,
+        "description": "Classic herb for pizzas and Mediterranean cuisine.",
+        "available": true,
+        "stock": 38
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 10,
+      "fields": {
+        "name": "Mint Organic Seed",
+        "slug": "mint",
+        "category": 2,
+        "price": 2.80,
+        "description": "Refreshing and cooling, great in teas and desserts.",
+        "available": true,
+        "stock": 45
+      }
+    },
+  
+    {
+      "model": "shop.product",
+      "pk": 11,
+      "fields": {
+        "name": "Nasturtium Organic Seed",
+        "slug": "nasturtium",
+        "category": 3,
+        "price": 2.95,
+        "description": "Edible flowers with a peppery flavor.",
+        "available": true,
+        "stock": 20
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 12,
+      "fields": {
+        "name": "Lavender Organic Seed",
+        "slug": "lavender",
+        "category": 3,
+        "price": 2.95,
+        "description": "Soothing scent and lovely purple blooms.",
+        "available": true,
+        "stock": 15
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 13,
+      "fields": {
+        "name": "Marigold Organic Seed",
+        "slug": "marigold",
+        "category": 3,
+        "price": 2.95,
+        "description": "Bright flowers known for pest-repelling properties.",
+        "available": true,
+        "stock": 25
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 14,
+      "fields": {
+        "name": "Borage Organic Seed",
+        "slug": "borage",
+        "category": 3,
+        "price": 2.95,
+        "description": "Beautiful blue flowers, loved by pollinators.",
+        "available": true,
+        "stock": 30
+      }
+    },
+    {
+      "model": "shop.product",
+      "pk": 15,
+      "fields": {
+        "name": "Catnip Organic Seed",
+        "slug": "catnip",
+        "category": 3,
+        "price": 2.95,
+        "description": "Fun treat for cats and helpful companion plant.",
+        "available": true,
+        "stock": 20
+      }
+    }
+  ]
+  

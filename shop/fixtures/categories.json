@@ -1,0 +1,27 @@
+[
+    {
+      "model": "shop.category",
+      "pk": 1,
+      "fields": {
+        "name": "Vegetables",
+        "slug": "vegetables"
+      }
+    },
+    {
+      "model": "shop.category",
+      "pk": 2,
+      "fields": {
+        "name": "Herbs",
+        "slug": "herbs"
+      }
+    },
+    {
+      "model": "shop.category",
+      "pk": 3,
+      "fields": {
+        "name": "Flowers",
+        "slug": "flowers"
+      }
+    }
+  ]
+  
