@@ -9,7 +9,8 @@
         "price": 2.80,
         "description": "Crunchy and sweet carrots, perfect for snacking and cooking.",
         "available": true,
-        "stock": 40
+        "stock": 40,
+        "image": "products/carrot.jpg"
       }
     },
     {
@@ -22,7 +23,8 @@
         "price": 2.80,
         "description": "Rich in nutrients, great for salads and juices.",
         "available": true,
-        "stock": 30
+        "stock": 30,
+        "image": "products/beetroot.jpg"
       }
     },
     {
@@ -35,7 +37,8 @@
         "price": 2.95,
         "description": "Juicy red tomatoes, ideal for sauces and salads.",
         "available": true,
-        "stock": 50
+        "stock": 50,
+        "image": "products/tomato.jpg"
       }
     },
     {
@@ -48,7 +51,8 @@
         "price": 2.95,
         "description": "Refreshing cucumbers, great for summer dishes.",
         "available": true,
-        "stock": 20
+        "stock": 20,
+        "image": "products/cucumber.jpg"
       }
     },
     {
@@ -61,7 +65,8 @@
         "price": 2.95,
         "description": "Crisp and green lettuce, perfect base for salads.",
         "available": true,
-        "stock": 25
+        "stock": 25,
+        "image": "products/lettuce.jpg"
       }
     },
   
@@ -75,7 +80,8 @@
         "price": 2.80,
         "description": "Fragrant herb, essential in Italian cooking.",
         "available": true,
-        "stock": 35
+        "stock": 35,
+        "image": "products/basil.jpg"
       }
     },
     {
@@ -88,7 +94,8 @@
         "price": 2.80,
         "description": "Woody and aromatic, ideal for roasts.",
         "available": true,
-        "stock": 30
+        "stock": 30,
+        "image": "products/rosemary.jpg"
       }
     },
     {
@@ -101,7 +108,8 @@
         "price": 2.80,
         "description": "Earthy flavor that blends well with many dishes.",
         "available": true,
-        "stock": 35
+        "stock": 35,
+        "image": "products/thyme.jpg"
       }
     },
     {
@@ -114,7 +122,8 @@
         "price": 2.95,
         "description": "Classic herb for pizzas and Mediterranean cuisine.",
         "available": true,
-        "stock": 38
+        "stock": 38,
+        "image": "products/oregano.jpg"
       }
     },
     {
@@ -127,7 +136,8 @@
         "price": 2.80,
         "description": "Refreshing and cooling, great in teas and desserts.",
         "available": true,
-        "stock": 45
+        "stock": 45,
+        "image": "products/mint.jpg"
       }
     },
   
@@ -141,7 +151,8 @@
         "price": 2.95,
         "description": "Edible flowers with a peppery flavor.",
         "available": true,
-        "stock": 20
+        "stock": 20,
+        "image": "products/nasturtium.jpg"
       }
     },
     {
@@ -154,7 +165,8 @@
         "price": 2.95,
         "description": "Soothing scent and lovely purple blooms.",
         "available": true,
-        "stock": 15
+        "stock": 15,
+        "image": "products/lavender.jpg"
       }
     },
     {
@@ -167,7 +179,8 @@
         "price": 2.95,
         "description": "Bright flowers known for pest-repelling properties.",
         "available": true,
-        "stock": 25
+        "stock": 25,
+        "image": "products/marigold.jpg"
       }
     },
     {
@@ -180,7 +193,8 @@
         "price": 2.95,
         "description": "Beautiful blue flowers, loved by pollinators.",
         "available": true,
-        "stock": 30
+        "stock": 30,
+        "image": "products/borage.jpg"
       }
     },
     {
@@ -193,7 +207,8 @@
         "price": 2.95,
         "description": "Fun treat for cats and helpful companion plant.",
         "available": true,
-        "stock": 20
+        "stock": 20,
+        "image": "products/catnip.jpg"
       }
     }
   ]

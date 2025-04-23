@@ -21,8 +21,8 @@
           </li>
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle"
-              href="#"
+              class="nav-link dropdown-toggle {% if url_name == 'product_list' %}active{% endif %}"
+              href="{% url 'shop:product_list' %}"
               id="shopDropdown"
               role="button"
               data-bs-toggle="dropdown"
@@ -30,11 +30,11 @@
               Shop
             </a>
             <ul class="dropdown-menu" aria-labelledby="shopDropdown">
-              <li><a class="dropdown-item" href="#">Vegetables</a></li>
-              <li><a class="dropdown-item" href="#">Herbs</a></li>
-              <li><a class="dropdown-item" href="#">Flowers</a></li>
+              <li><a class="dropdown-item" href="{% url 'shop:product_list_by_category' 'vegetables' %}">Vegetables</a></li>
+              <li><a class="dropdown-item" href="{% url 'shop:product_list_by_category' 'herbs' %}">Herbs</a></li>
+              <li><a class="dropdown-item" href="{% url 'shop:product_list_by_category' 'flowers' %}">Flowers</a></li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">All Products</a></li>
+              <li><a class="dropdown-item" href="{% url 'shop:product_list' %}">All Products</a></li>
             </ul>
           </li>
           <li class="nav-item">
