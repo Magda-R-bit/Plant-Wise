@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500;600;700&display=swap');
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, .site-title {
+    font-family: 'EB Garamond', serif;
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: #f3fff1;
+    border-bottom: 2px solid #d4edda;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-family: 'EB Garamond', sans-serif;
+    font-weight: 700;
+    color: #2d6a4f !important;
+    display: flex-start;
+    align-items: center;
+}
+
+.nav-link {
+    color: #3e503c !important;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #1b4332 !important;
+}
+
+.dropdown-menu {
+    background-color: #e6f4ea;
+}
+
+.dropdown-item:hover {
+    background-color: #cfead7;
+    color: #1b4332;
+}
+
+.btn-outline-success {
+    border-color: #2d6a4f;
+    color: #2d6a4f;
+}
+
+.btn-outline-success:hover {
+    background-color: #2d6a4f;
+    color: white;
+}
+
+.form-control:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+/* Logo */
+.logo-img {
+    width: 90px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('/media/images/backgroundImg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.scroll-arrow {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+  
+.hero-content:hover .scroll-arrow {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+.scroll-arrow:hover {
+    transform: translateY(5px);
+    color: #b8f2e6;
+}
+
+
+
+/* Footer */
+.footer-icons {
+    font-size: 0;
+}
+
+.font-icons i {
+    font-size: 2rem;
+    color: #198754;
+}
+
+.footer-icons a:hover {
+    color: #198754;
+  }
+
+.footer-icons a {
+    color: #2d6a4f;
+    transition: color 0.2s ease-in-out;
+}
+
+     /* Mailchimp */
+.refferal_badge {
+    background-color: #198754;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 93px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1200px) {
+    .navbar .form-control {
+        width: 50%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-outline-success {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+}
