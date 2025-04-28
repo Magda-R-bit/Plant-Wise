@@ -26,12 +26,12 @@ if os.path.exists('env.py'):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = [
-    'plant-wise-97799c6a3824.herokuapp.com', 'localhost', '127.0.0.1'
+    'plant-wise-97799c6a3824.herokuapp.com', 'localhost', '127.0.0.1',
     ]
 
 
@@ -82,6 +82,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
         },
     },
