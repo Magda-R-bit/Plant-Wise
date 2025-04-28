@@ -163,6 +163,16 @@ h1, h2, h3, .site-title {
     margin-top: 8px;
 }
 
+/* Product */
+
+.font {
+    font-weight: 900;
+    color: #0a0909;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 /* Media Queries */
 
