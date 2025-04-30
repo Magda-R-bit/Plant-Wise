@@ -21,7 +21,7 @@
           </li>
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle {% if url_name == 'product_list' %}active{% endif %}"
+              class="nav-link dropdown-toggle {% if url_name == 'shop:product_list' %}active{% endif %}"
               href="{% url 'shop:product_list' %}"
               id="shopDropdown"
               role="button"
@@ -76,7 +76,7 @@
           </form>
       </div>
 
-        <a href="#" class="btn btn-outline-secondary me-2" title="Cart"> 🛒 </a>
+        <a href="{% url 'view_cart' %}" class="btn btn-outline-secondary me-2" title="Cart"> 🛒 </a>
         <a href="#" class="btn btn-outline-secondary me-2" title="Wishlist">
           💚
         </a>
