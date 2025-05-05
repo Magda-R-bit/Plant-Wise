@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+from shop.models import Product
 
 
 def view_cart(request):
@@ -7,18 +9,36 @@ def view_cart(request):
     return render(request, 'cart/cart.html')
 
 
-def add_to_cart(request, item_id):
+def add_to_cart(request, slug):
     """ Add a quantity of the specified product to the shopping cart """
 
-    quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
-    cart = request.session.get('cart', {})
+    if request.method != "POST":
+        messages.error(request, "Invalid request method.")
+        return redirect("shop:product_list")
 
-    if item_id in list(cart.keys()):
-        cart[item_id] += quantity
+    quantity_str = request.POST.get("quantity")
+    if not quantity_str:
+        messages.error(request, "No quantity provided.")
+        return redirect("shop:product_detail", slug=slug)
+
+    try:
+        quantity = int(quantity_str)
+        if quantity <= 0:
+            raise ValueError
+    except ValueError:
+        messages.error(request, "Invalid quantity.")
+        return redirect("shop:product_detail", slug=slug)
+
+    get_object_or_404(Product, slug=slug)
+
+    redirect_url = request.POST.get("redirect_url") or "/"
+    cart = request.session.get("cart", {})
+
+    if slug in cart:
+        cart[slug] += quantity
     else:
-        cart[item_id] = quantity
+        cart[slug] = quantity
 
-    request.session['cart'] = cart
-    print(request.session['cart'])
+    request.session["cart"] = cart
+    messages.success(request, "Item added to cart!")
     return redirect(redirect_url)
