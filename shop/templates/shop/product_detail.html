@@ -59,6 +59,29 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
+                    <br>
+                    {% if user.is_authenticated %}
+                        {% if product in user.wishlist.products.all %}
+                            <form method="post" action="{% url 'remove_from_wishlist' product.slug %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-danger" title="Remove from wishlist">
+                                    Remove from Wishlist
+                                </button>
+                            </form>
+                        {% else %}
+                            <form method="post" action="{% url 'add_to_wishlist' product.slug %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-secondary" title="Add to wishlist">
+                                    💚 Add to Wishlist
+                                </button>
+                            </form>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'account_login' %}" class="btn btn-outline-secondary" title="Login to save to wishlist">
+                            🤍 Login to Add to Wishlist
+                        </a>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
