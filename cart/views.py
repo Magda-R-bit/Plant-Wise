@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from shop.models import Product
+from wishlist.models import WishlistItem
 
 
 def view_cart(request):
@@ -38,6 +39,12 @@ def add_to_cart(request, slug):
         cart[slug] += quantity
     else:
         cart[slug] = quantity
+
+    if request.user.is_authenticated:
+        WishlistItem.objects.filter(
+            user=request.user,
+            product__slug=slug
+        ).delete()
 
     request.session["cart"] = cart
     messages.success(request, "Item added to cart!")
