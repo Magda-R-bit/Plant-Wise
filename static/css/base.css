@@ -65,7 +65,12 @@ h1, h2, h3, .site-title {
 }
 
 .btn-outline-success:hover {
-    background-color: #2d6a4f;
+    background-color: #488c6e;
+    color: white;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #c7cac9;
     color: white;
 }
 
