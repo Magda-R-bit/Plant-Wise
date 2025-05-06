@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -28,10 +37,11 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Qty</th>
                                     <th scope="col">Subtotal</th>
+                                    <th scope="col">Update</th>
+                                    <th scope="col">Remove</th>
                                 </tr>
                             </thead>
                             {% for item in cart_items %}
@@ -40,23 +50,48 @@
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
-                                    </td>
-                                    <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
                                         <p class="my-0">{{ item.quantity }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
+                                        <p class="my-0">${{ item.subtotal }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <form action="{% url 'update_cart' item.slug %}" method="POST" class="d-flex align-items-center">
+                                            {% csrf_token %}
+                                            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" class="form-control me-2 w-50" />
+                                            <button type="submit" class="btn btn-sm btn-success">Update</button>
+                                        </form>
+                                    </td>
+                                    <td class="py-3">
+                                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal-{{ item.slug }}">
+                                            Remove
+                                        </button>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="removeModal-{{ item.slug }}" tabindex="-1" aria-labelledby="removeModalLabel-{{ item.slug }}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header bg-danger text-white">
+                                          <h5 class="modal-title" id="removeModalLabel-{{ item.slug }}">Remove Item</h5>
+                                          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          Are you sure you want to remove <strong>{{ item.product.name }}</strong> from your cart?
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                          <a href="{% url 'remove_from_cart' item.slug %}" class="btn btn-danger">Remove</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>cart Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6><strong>Cart Total: ${{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                                     {% if free_delivery_delta > 0 %}

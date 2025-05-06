@@ -194,6 +194,14 @@ h1, h2, h3, .site-title {
     color: white !important;
 }
 
+.badge-success {
+    background-color: #28a745;
+    color: white;
+    padding: 0.25em 0.6em;
+    font-size: 0.8em;
+    border-radius: 10px;
+}
+
 /* Media Queries */
 
 @media (max-width: 1200px) {

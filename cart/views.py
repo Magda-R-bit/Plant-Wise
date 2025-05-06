@@ -42,3 +42,25 @@ def add_to_cart(request, slug):
     request.session["cart"] = cart
     messages.success(request, "Item added to cart!")
     return redirect(redirect_url)
+
+
+def update_cart(request, slug):
+    quantity = int(request.POST.get('quantity', 0))
+    cart = request.session.get('cart', {})
+
+    if quantity > 0:
+        cart[slug] = quantity
+        messages.success(request, f'Updated quantity for {slug.title()}')
+    else:
+        cart.pop(slug)
+        messages.success(request, f'Removed {slug.title()} from your cart')
+
+    request.session['cart'] = cart
+    return redirect('view_cart')
+
+def remove_from_cart(request, slug):
+    cart = request.session.get('cart', {})
+    cart.pop(slug, None)
+    request.session['cart'] = cart
+    messages.success(request, f'Removed {slug.title()} from your cart.')
+    return redirect('view_cart')
