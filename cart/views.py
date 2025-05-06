@@ -58,6 +58,7 @@ def update_cart(request, slug):
     request.session['cart'] = cart
     return redirect('view_cart')
 
+
 def remove_from_cart(request, slug):
     cart = request.session.get('cart', {})
     cart.pop(slug, None)

@@ -79,7 +79,7 @@
         <a href="{% url 'view_cart' %}" class="btn btn-outline-secondary me-2" title="Cart"><i class="fas fa-shopping-cart"></i> 🛒 {% if product_count > 0 %}
           <span class="badge badge-pill badge-success">{{ product_count }}</span>
       {% endif %}</a>
-        <a href="#" class="btn btn-outline-secondary me-2" title="Wishlist">
+        <a href="{% url 'wishlist' %}" class="btn btn-outline-secondary me-2" title="Wishlist">
           💚
         </a>
 
