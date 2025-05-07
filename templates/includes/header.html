@@ -63,10 +63,11 @@
           class="search-form-container"
           style="display: none"
         >
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="search" method="GET" action="{% url 'shop:search_results' %}">
             <input
               class="form-control me-2"
               type="search"
+              name="q"
               placeholder="Search seeds..."
               aria-label="Search"
             />

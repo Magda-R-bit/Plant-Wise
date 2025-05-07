@@ -5,6 +5,11 @@ app_name = 'shop'
 
 urlpatterns = [
     path(
+        'search/',
+        views.search_results,
+        name='search_results'
+    ),
+    path(
         '',
         views.product_list,
         name='product_list'
@@ -19,4 +24,6 @@ urlpatterns = [
         views.product_detail,
         name='product_detail'
     ),
+    
+
 ]
