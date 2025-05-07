@@ -13,9 +13,11 @@
     {% for product in products %}
     <div class="col-md-4 mb-4">
     <div class="card h-100 shadow-sm">
-      <img src="{% if product.image %}{{ product.image.url }}{% else %}/media/products/default.jpg{% endif %}" 
-      class="card-img-top" 
-      alt="{{ product.slug|default:'Product image' }}">
+      <a href="{% url 'shop:product_detail' product.slug %}">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}/media/products/default.jpg{% endif %}" 
+        class="card-img-top" 
+        alt="{{ product.slug|default:'Product image' }}">
+      </a>
       <div class="card-body d-flex flex-column">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text text-muted">{{ product.description|truncatechars:100 }}</p>
