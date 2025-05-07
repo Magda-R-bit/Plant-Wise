@@ -76,10 +76,19 @@
             </button>
           </form>
       </div>
+      <div class="cart-wrapper position-relative">
 
         <a href="{% url 'view_cart' %}" class="btn btn-outline-secondary me-2" title="Cart"><i class="fas fa-shopping-cart"></i> 🛒 {% if product_count > 0 %}
-          <span class="badge badge-pill badge-success">{{ product_count }}</span>
-      {% endif %}</a>
+          <span class="position-absolute top-0 start-100 translate-middle badge badge-pill badge-success">{{ product_count }}</span>
+          {% endif %}</a>
+          <div class="message-container">
+            {% for message in messages %}
+              {% if message.level == 25 %}
+                  {% include 'includes/toasts/toast_success.html' %}
+              {% endif %}
+            {% endfor %}
+          </div>
+      </div>
       {% if request.user.is_authenticated %}
         <a href="{% url 'wishlist' %}" class="btn btn-outline-secondary me-2" title="Wishlist">
           💚

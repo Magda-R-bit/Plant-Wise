@@ -12,6 +12,7 @@ def view_cart(request):
 
 def add_to_cart(request, slug):
     """ Add a quantity of the specified product to the shopping cart """
+    product = get_object_or_404(Product, slug=slug)
 
     if request.method != "POST":
         messages.error(request, "Invalid request method.")
@@ -47,7 +48,7 @@ def add_to_cart(request, slug):
         ).delete()
 
     request.session["cart"] = cart
-    messages.success(request, "Item added to cart!")
+    messages.success(request, f'Added {product.name} to your cart')
     return redirect(redirect_url)
 
 
