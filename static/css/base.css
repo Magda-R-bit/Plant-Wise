@@ -209,25 +209,12 @@ h1, h2, h3, .site-title {
 
 /* Toasts */
 
-.cart-wrapper {
-    position: relative;
-}
-
 .message-container {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 8px;
-    z-index: 9999;
-    width: 300px;
-}
-
-.custom-toast {
-    overflow: visible;
-}
-
-.toast-capper {
-    height: 2px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+    width: 320px;
 }
 
 .arrow-up {
