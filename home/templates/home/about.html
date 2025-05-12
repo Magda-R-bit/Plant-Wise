@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Image -->
+<div class="container my-5 text-center">
+  <img
+    src="{% static 'images/about.jpg' %}"
+    alt="About Plant Wise"
+    class="img-fluid rounded shadow"
+    style="max-width: 800px; width: 100%; height: auto;"
+  />
+</div>
+
+<!-- Intro Text -->
+<section class="container my-5 text-center">
+  <h1 class="display-4 fw-bold">About Plant Wise</h1>
+  <p class="lead">
+    At <strong>Plant Wise</strong>, we believe that growing your own food is
+    one of the most powerful steps toward a healthier life and a greener
+    planet.
+  </p>
+  <p>
+    Founded with a passion for sustainability, we provide high-quality
+    organic seeds and eco-friendly gardening tips to support growers of all
+    kinds — whether you have a windowsill, a backyard, or a community plot.
+  </p>
+  <p>
+    Our mission is simple:
+    <em>make growing easy, rewarding, and accessible for everyone.</em>
+    We're here to help you nurture your garden, your health, and the earth —
+    one seed at a time.
+  </p>
+  <p class="mt-4">
+    <strong>Thank you for choosing Plant Wise.</strong> Together, we’re
+    sowing the seeds of a better future 🌍
+  </p>
+</section>
+
+<!-- Lifestyle Image -->
+<div class="container my-5">
+  <img
+    src="{% static 'images/about_people.jpg' %}"
+    alt="People gardening together"
+    class="img-fluid w-100 rounded shadow"
+  />
+</div>
+
+    <!-- Quote Between Sections -->
+    <div class="container text-center my-4">
+      <blockquote class="blockquote">
+        <p class="fst-italic fs-4">
+          “As I work on the garden, the garden works on me.”
+        </p>
+        <footer class="blockquote-footer">Our guiding philosophy</footer>
+      </blockquote>
+    </div>
+  </div>
+
+<!-- Our Story and Quote -->
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Our Story</h2>
+      <p>
+        Plant Wise was born out of a love for gardening and a desire to promote sustainable practices. 
+        Our founder, Magdalena Redka, started this journey in her backyard, experimenting with different seeds and growing techniques. 
+        Over the years, this passion has blossomed into a thriving community of gardeners who share knowledge, tips, and resources.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h2>Our Values</h2>
+      <ul>
+        <li><strong>Sustainability:</strong> We prioritize eco-friendly practices in everything we do.</li>
+        <li><strong>Community:</strong> We believe in the power of sharing knowledge and resources.</li>
+        <li><strong>Quality:</strong> We source only the best organic seeds for our customers.</li>
+        <li><strong>Accessibility:</strong> We strive to make gardening accessible to everyone.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action -->
+<div class="text-center my-5">
+  <a href="#" class="btn btn-success">Get in Touch</a>
+</div>
+
+{% endblock %}
+
