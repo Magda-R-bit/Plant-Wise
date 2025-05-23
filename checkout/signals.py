@@ -17,4 +17,8 @@ def update_on_delete(sender, instance, **kwargs):
     """
     Update order total on lineitem delete
     """
-    instance.order.update_total()
+
+    try:
+        instance.order.update_total()
+    except Exception as e:
+        print(f"Error in update_on_delete: {e}")
