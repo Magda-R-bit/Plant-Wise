@@ -111,6 +111,9 @@
             
             {% if request.user.is_authenticated %}
             <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+            {% if request.user.is_staff %}
+            <li><a class="dropdown-item" href="{% url 'shop:add_product' %}">Add Product</a></li>
+            {% endif %}
             <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
             {% endif %}
           </ul>

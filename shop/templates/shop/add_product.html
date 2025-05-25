@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% comment %} {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %} {% endcomment %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="logo-font">Add New Product</h2>
+            <p class="text-muted">Manage your shop's catalog with ease</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mb-5 form-control">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <hr>
+            <h3 class="logo-font mb-3 text-center">Shop</h3>
+            <h5 class="text-muted mb-4 text-center">Add a new item to your store</h5>
+            <hr>
+            <form method="POST" action="{% url 'shop:add_product' %}" enctype="multipart/form-data" class="form">
+                {% csrf_token %}
+                <div class="rounded-2 p-3 bg-light">
+                    {{ form|crispy }}
+                </div>
+                <div class="text-right mt-4">
+                    <a class="btn btn-outline-secondary rounded-2 mr-2" href="{% url 'shop:product_list' %}">Cancel</a>
+                    <button class="btn btn-success rounded-2" type="submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

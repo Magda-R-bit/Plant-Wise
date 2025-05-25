@@ -267,6 +267,11 @@ h1, h2, h3, .site-title {
     overflow-y: auto;
 }
 
+/* Add Product Form */
+
+input[type="checkbox"]:checked {
+    background-color: green;
+}
 
 /* Media Queries */
 

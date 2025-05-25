@@ -10,6 +10,11 @@ urlpatterns = [
         name='search_results'
     ),
     path(
+        'add/',
+        views.add_product,
+        name='add_product'
+    ),
+    path(
         '',
         views.product_list,
         name='product_list'
@@ -24,6 +29,5 @@ urlpatterns = [
         views.product_detail,
         name='product_detail'
     ),
-    
 
 ]
