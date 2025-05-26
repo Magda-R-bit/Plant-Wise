@@ -15,6 +15,16 @@ urlpatterns = [
         name='add_product'
     ),
     path(
+        'edit/<slug:slug>/',
+        views.edit_product,
+        name='edit_product'
+    ),
+    path(
+        'delete/<slug:slug>/',
+        views.delete_product,
+        name='delete_product'
+    ),
+    path(
         '',
         views.product_list,
         name='product_list'
