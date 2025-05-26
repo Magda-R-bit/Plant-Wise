@@ -15,7 +15,10 @@ def wishlist_view(request):
 def add_to_wishlist(request, product_slug):
     product = get_object_or_404(Product, slug=product_slug)
     WishlistItem.objects.get_or_create(user=request.user, product=product)
-    messages.success(request, f"Added {product.name} to your wishlist.")
+    messages.success(
+        request,
+        f"Added {product.name} to your wishlist."
+    )
     return redirect(request.META.get('HTTP_REFERER', 'wishlist'))
 
 
