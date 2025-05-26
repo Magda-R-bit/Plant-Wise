@@ -7,25 +7,13 @@
       <div class="col-md-4 mb-3">
         <h5 class="fw-bold text-success">Plant Wise</h5>
         <div class="footer-icons">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            class="social-icon me-3"
-          >
+          <a href="https://facebook.com" target="_blank" class="social-icon me-3">
             <i class="bi bi-facebook fs-4"></i>
           </a>
-          <a
-            href="https://youtube.com"
-            target="_blank"
-            class="social-icon me-3"
-          >
+          <a href="https://youtube.com" target="_blank" class="social-icon me-3">
             <i class="bi bi-youtube fs-4"></i>
           </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            class="social-icon me-3"
-          >
+          <a href="https://instagram.com" target="_blank" class="social-icon me-3">
             <i class="bi bi-instagram fs-4"></i>
           </a>
         </div>
@@ -35,46 +23,26 @@
       <div class="col-md-4 mb-3">
         <ul class="list-unstyled">
           <li>
-            <a
-              href="#"
-              class="text-dark"
-              data-bs-toggle="modal"
-              data-bs-target="#privacyPolicyModal"
-            >
+            <a href="#" class="text-dark" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">
               <h6 class="fw-semibold">Privacy Policy</h6>
             </a>
           </li>
         </ul>
         <!-- Privacy Policy Modal -->
-        <div
-          class="modal fade"
-          id="privacyPolicyModal"
-          tabindex="-1"
-          aria-labelledby="privacyPolicyLabel"
-          aria-hidden="true"
-        >
+        <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="privacyPolicyLabel">
                   Privacy Policy for Plant Wise
                 </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 {% include "includes/privacy.html" %}
               </div>
               <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                   Close
                 </button>
               </div>
@@ -84,19 +52,17 @@
       </div>
 
       <!-- Mailchimp Newsletter -->
-
       <div id="mc_embed_shell" class="col-md-4 mb-3">
         <div class="col-md-6 mb-3">
           <h6 class="fw-semibold">Subscribe to our Newsletter</h6>
           <form
-            action="https://gmail.us17.list-manage.com/subscribe/post?u=cb2c6a93135f8e815ce1440f5&amp;id=0eadb86777&amp;f_id=00d9c3e1f0"
-            method="post"
-            target="_blank"
+            id="newsletter-form"
+            action="https://gmail.us17.list-manage.com/subscribe/post-json"
+            method="GET"
             novalidate
-            class="small-form"
           >
-            <label for="mce-EMAIL" class="form-label small"
-              ><span class="text-danger">*</span> Email Address
+            <label for="mce-EMAIL" class="form-label small">
+              <span class="text-danger">*</span> Email Address
             </label>
             <div class="input-group input-group-sm">
               <input
@@ -108,50 +74,52 @@
               />
               <button class="btn btn-success btn-sm" type="submit">📩</button>
             </div>
-            <small
-              class="text-muted mt-1 mb-2 d-block"
-              style="font-size: 0.6rem"
-            >
+            <small class="text-muted mt-1 mb-2 d-block" style="font-size: 0.6rem">
               <span class="text-danger">*</span> indicates required
             </small>
-
-            <div id="mce-responses" class="clear foot">
-              <div
-                class="response small"
-                id="mce-error-response"
-                style="display: none"
-              ></div>
-              <div
-                class="response small"
-                id="mce-success-response"
-                style="display: none"
-              ></div>
-            </div>
-            <div aria-hidden="true" style="position: absolute; left: -5000px">
-              <input
-                type="text"
-                name="b_cb2c6a93135f8e815ce1440f5_0eadb86777"
-                tabindex="-1"
-                value=""
-              />
-            </div>
-            <div class="clear foot">
-              <a
-                href="http://eepurl.com/jcqSlg"
-                title="Mailchimp - email marketing made easy and fun"
-              >
-                <img
-                  class="refferal_badge"
-                  src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
-                  alt="Intuit Mailchimp"
-                />
-              </a>
-            </div>
+            <div id="newsletter-response" class="mt-2 small text-success" style="display: none;"></div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+
+  <script>
+  document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.EMAIL.value;
+    const responseDiv = document.getElementById("newsletter-response");
+
+    const script = document.createElement("script");
+
+    const params = new URLSearchParams({
+      u: "cb2c6a93135f8e815ce1440f5",
+      id: "0eadb86777",
+      EMAIL: email,
+      c: "mailchimpCallback",
+    });
+
+    script.src = `https://gmail.us17.list-manage.com/subscribe/post-json?${params.toString()}`;
+    document.body.appendChild(script);
+
+    window.mailchimpCallback = function (data) {
+      if (data.result === "success") {
+        responseDiv.innerHTML = "✅ Thank you for subscribing!";
+        responseDiv.style.display = "block";
+        form.reset();
+      } else {
+        responseDiv.innerHTML = "⚠️ " + data.msg;
+        responseDiv.style.display = "block";
+      }
+
+      document.body.removeChild(script);
+    };
+  });
+</script>
+
 
   <script type="text/javascript">
     (function ($) {
@@ -174,4 +142,5 @@
     })(jQuery);
     var $mcj = jQuery.noConflict(true);
   </script>
+
 </footer>
