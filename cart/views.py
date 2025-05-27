@@ -56,11 +56,16 @@ def update_cart(request, slug):
     quantity = int(request.POST.get('quantity', 0))
     cart = request.session.get('cart', {})
 
-    if quantity > 0:
+    if quantity > 99:
+        messages.warning(
+            request,
+            'You cannot add more than 99 of the same item.'
+        )
+    elif quantity > 0:
         cart[slug] = quantity
         messages.success(request, f'Updated quantity for {slug.title()}')
     else:
-        cart.pop(slug)
+        cart.pop(slug, None)
         messages.success(request, f'Removed {slug.title()} from your cart')
 
     request.session['cart'] = cart
