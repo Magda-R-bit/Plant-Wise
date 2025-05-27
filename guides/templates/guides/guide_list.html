@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<h2 class="my-4 text-center">🌿 Gardening Tips & Guides</h2>
+  <div class="row">
+    {% for guide in guides %}
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ guide.title }}</h5>
+          <p class="text-muted small">{{ guide.get_category_display }} • {{ guide.created_on|date:"M d, Y" }}</p>
+          <a href="{% url 'guide_detail' guide.slug %}" class="btn btn-outline-success btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No guides published yet.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
