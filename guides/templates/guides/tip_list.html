@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4"> 
+    <h2>User Gardening Tips</h2>
+    {% for tip in tips %}
+        <div class="card my-3">
+            <div class="card-body">
+                <h5>{{ tip.title }}</h5>
+                <p>{{ tip.content|truncatewords:30 }}</p>
+                <small>
+                    Submitted by {{ tip.user }} |
+                    Category: {{ tip.get_category_display }}
+                </small>
+            </div>
+        </div>
+    {% empty %}
+        <p>No tips submitted yet.</p>
+    {% endfor %}
+    <div class="mt-4">
+        <a href="{% url 'submit_tip' %}" class="btn btn-success ms-2">Submit a Tip</a>
+     </div>
+</div>
+{% endblock %}

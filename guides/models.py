@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils.text import slugify
 
 
@@ -10,7 +11,6 @@ class Guide(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=True)
 
-    # Optional: Add category like "Pest Control", "Companion Planting"
     CATEGORY_CHOICES = [
         ('general', 'General'),
         ('companion', 'Companion Planting'),
@@ -22,6 +22,13 @@ class Guide(models.Model):
         max_length=20,
         choices=CATEGORY_CHOICES,
         default='general'
+    )
+
+    user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
     )
 
     def save(self, *args, **kwargs):
