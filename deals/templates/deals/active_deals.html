@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Current Deals & Offers</h2>
+    {% if deals %}
+        {% for deal in deals %}
+            <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ deal.name }}</h5>
+                    <p class="card-text">
+                        {{ deal.get_type_display }} on <strong>{{ deal.product.name }}</strong><br>
+                        {% if deal.type == 'discount' %}Save {{ deal.value }}%{% endif %}
+                        {% if deal.start_date %}<br><small>Starts: {{ deal.start_date|date:"M d, Y H:i" }}</small>{% endif %}
+                        {% if deal.end_date %}<br><small>Ends: {{ deal.end_date|date:"M d, Y H:i" }}</small>{% endif %}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No active deals at the moment. Please check back later.</p>
+    {% endif %}
+</div>
+{% endblock %}
