@@ -47,15 +47,35 @@
                                 <tr>
                                     <td class="p-3 w-25">
                                         <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                        <p class="mt-2 mb-0">
+                                        <strong>{{ item.product.name }}</strong>
+                                        <!-- Deal  -->
+                                        {% if item.deal %}
+                                            <span class="badge bg-success">Deal</span>
+                                        {% endif %}
+                                        </p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
+                                        {% if item.deal %}
+                                        <p class="text-success small my-0">
+                                            {% if item.deal.type == 'discount' %}
+                                                {{ item.deal.value|floatformat:0 }}% off applied!
+                                            {% elif item.deal.type == 'bogo' %}
+                                                Buy One Get One Free!
+                                            {% endif %}
+                                        </p>
+                                        {% endif %}
                                     </td>
                                     <td class="py-3 w-25">
                                         <p class="my-0">{{ item.quantity }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.subtotal }}</p>
+                                        <p class="my-0">${{ item.line_price|floatformat:2 }}</p>
+                                    <!-- savings  -->
+                                        {% if item.savings and item.savings > 0 %}
+                                            <p class="text-success small my-0">You saved ${{ item.savings|floatformat:2 }}</p>
+                                        {% endif %}
                                     </td>
                                     <td class="py-3">
                                         <form action="{% url 'update_cart' item.slug %}" method="POST" class="d-flex align-items-center">
@@ -93,9 +113,16 @@
                                     <h6><strong>Cart Total: ${{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    <!-- Deal savings summary -->
+                                    {% if deal_savings and deal_savings > 0 %}
+                                        <p class="mt-1 text-success">
+                                            You saved <strong>${{ deal_savings|floatformat:2 }}</strong> with current deals!
+                                        </p>
+                                    {% endif %}
+                                    
                                     {% if free_delivery_delta > 0 %}
                                         <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                            You could get free delivery by spending just <strong>${{ free_delivery_delta|floatformat:2 }}</strong> more!
                                         </p>
                                     {% endif %}
                                 </td>

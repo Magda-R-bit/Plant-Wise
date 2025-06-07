@@ -7,12 +7,19 @@ from django_countries.fields import CountryField
 
 from shop.models import Product
 from profiles.models import UserProfile
+from deals.models import Deal
+from django.utils.timezone import now
 
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders')
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='orders'
+    )
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -104,11 +111,34 @@ class OrderLineItem(models.Model):
         blank=False,
         editable=False
     )
+    applied_deal = models.CharField(max_length=100, blank=True, null=True)
+
+    def __str__(self):
+        return f"SKU {self.product.slug} on order {self.order.order_number}"
 
     def save(self, *args, **kwargs):
-        """
-        Override the original save method to set the lineitem total
-        and update the order total.
-        """
-        self.lineitem_total = self.product.price * self.quantity
+
+        deal = Deal.objects.filter(
+            product=self.product,
+            start_date__lte=now(),
+            end_date__gte=now()
+        ).first()
+
+        if deal:
+            if deal.type == 'discount' and deal.value:
+                discount = (deal.value / 100) * self.product.price
+                self.lineitem_total = (
+                    (self.product.price - discount) * self.quantity
+                )
+                self.applied_deal = f"{int(deal.value)}% off"
+            elif deal.type == 'bogo':
+                free_items = self.quantity // 1
+                self.lineitem_total = self.product.price * self.quantity
+                self.applied_deal = "Buy One Get One Free"
+                print(f"Free items for {self.product.name}: {free_items}")
+            else:
+                self.lineitem_total = self.product.price * self.quantity
+        else:
+            self.lineitem_total = self.product.price * self.quantity
+
         super().save(*args, **kwargs)

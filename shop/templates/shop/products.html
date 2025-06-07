@@ -18,6 +18,17 @@
         class="card-img-top" 
         alt="{{ product.slug|default:'Product image' }}">
       </a>
+      {% for deal in active_deals %}
+        {% if deal.product.name == product.name %}
+          <span class="badge bg-danger">
+            {% if deal.deal_type == 'discount' %}
+              {{ deal.value }}% OFF
+            {% elif deal.deal_type == 'bogo' %}
+              BOGO Deal!
+            {% endif %}
+          </span>
+        {% endif %}
+      {% endfor %}
       {% if request.user.is_staff %}
         <small>
           <a class="text-success" href="{% url 'shop:edit_product' product.slug %}">Edit</a> | 

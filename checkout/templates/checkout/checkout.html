@@ -43,28 +43,57 @@
                             <a href="{{ product.image.url }}">
                                 {% if item.product.image %}
                                     <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                                {% elif item.product.images %}
+                                    <img class="w-100" src
                                 {% else %}
                                     <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    {% if item.deal %}
+                                      <span class="badge bg-success">Deal</span>
+                                    {% endif %}
                                 {% endif %}
                             </a>
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                            <p class="mb-0 small text-muted">${{ item.product.price|floatformat:2 }} each</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            {% if item.deal %}
+                                <p class="text-success small my-0">
+                                    {% if item.deal.type == 'discount' %}
+                                        {{ item.deal.value|floatformat:0 }}% off applied!
+                                    {% elif item.deal.type == 'bogo' %}
+                                        Buy One Get One Free!
+                                    {% endif %}
+                                </p>
+                            {% endif %}
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">${{ item.subtotal|floatformat:2 }}</p>
+                            <p class="my-0">${{ item.line_price|floatformat:2 }}</p>
                         </div>
                     </div>
+                {% if item.deal and item.deal.type == 'bogo' %}
+                    <p><strong>+{{ item.free_items }} free!</strong></p>
+                    <p><strong>
+                        Total Qty: {{ item.quantity|add:item.free_items }}
+                    </strong></p>
+                {% elif item.deal and item.deal.type == 'discount' %}
+                    <p><strong>Discount: ${{ item.discount|floatformat:2 }}</strong></p>
+                {% endif %}
                 {% endfor %}
                 <hr class="my-0">
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
+                        {% if deal_savings > 0 %}
+                            <p class="my-0 text-success">You saved:</p>
+                        {% endif %}
                         <p class="my-0">Order Total:</p>
                         <p class="my-0">Delivery:</p>
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
+                        {% if deal_savings > 0 %}
+                            <p class="my-0 text-success">- ${{ deal_savings|floatformat:2 }}</p>
+                        {% endif %}
                         <p class="my-0">${{ total | floatformat:2 }}</p>
                         <p class="my-0">${{ delivery | floatformat:2 }}</p>
                         <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>

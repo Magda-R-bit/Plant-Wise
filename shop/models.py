@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 # Shop
@@ -30,3 +31,10 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def active_deal(self):
+        now = timezone.now()
+        return self.deals.filter(
+            start_date__lte=now,
+            end_date__gte=now
+        ).first()

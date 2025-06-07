@@ -26,7 +26,7 @@
                     {% endif %}
                     <!-- Product edit/delete-->
                     {% if request.user.is_staff %}
-                        <small>
+                        <small class="card-img-top img-fluid w-50 mx-auto d-block rounded-2">
                             <a class="text-success" href="{% url 'shop:edit_product' product.slug %}">Edit</a> | 
                             <a class="text-danger" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ product.id }}">Delete</a>
                         </small>
@@ -100,7 +100,15 @@
                             🤍 Login to Add to Wishlist
                         </a>
                     {% endif %}
-
+                    {% if product.active_deal %}
+                    <p class="text-success">Special offer: 
+                        {% if product.active_deal.type == 'discount' %}
+                          {{ product.active_deal.value|floatformat:0 }}% off!
+                        {% else %}
+                          Buy One Get One Free!
+                        {% endif %}
+                    </p>
+                    {% endif %}
                 </div>
             </div>
         </div>

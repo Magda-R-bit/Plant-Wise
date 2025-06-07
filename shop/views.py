@@ -4,12 +4,18 @@ from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 from django.db.models import Q
 from .forms import ProductForm
+from deals.models import Deal
+from django.utils.timezone import now
 
 
 def product_list(request, category_slug=None):
     category = None
     categories = Category.objects.all()
     products = Product.objects.all()
+    active_deals = Deal.objects.filter(
+        start_date__lte=now(),
+        end_date__gte=now()
+    )
 
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
@@ -18,7 +24,8 @@ def product_list(request, category_slug=None):
     return render(request, 'shop/products.html', {
         'category': category,
         'categories': categories,
-        'products': products
+        'products': products,
+        'active_deals': active_deals,
     })
 
 

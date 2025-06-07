@@ -13,5 +13,10 @@ def active_deals(request):
 
 
 def deal_list(request):
-    deals = Deal.objects.filter(start_date__lte=now(), end_date__gte=now())
-    return render(request, 'deals/deal_list.html', {'deals': deals})
+    active_deals = Deal.objects.filter(
+        start_date__lte=now(),
+        end_date__gte=now()
+    )
+    return render(request, 'deals/deal_list.html', {
+        'deals': active_deals
+    })
