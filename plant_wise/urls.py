@@ -35,3 +35,5 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'plant_wise.views.handler404'
+handler500 = 'plant_wise.views.handler500'
+
