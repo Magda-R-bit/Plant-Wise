@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profiles/
+Sitemap: https://plant-wise-97799c6a3824.herokuapp.com/sitemap.xml
