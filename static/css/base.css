@@ -273,6 +273,23 @@ input[type="checkbox"]:checked {
     background-color: green;
 }
 
+/* 404 Page */
+
+body.error-404 {
+    background: #f8f9fa url('https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/404.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.error-overlay {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 3rem;
+    border-radius: 10px;
+}
+
+
+
+
 /* Media Queries */
 
 @media (max-width: 1200px) {

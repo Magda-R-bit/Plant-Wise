@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body_class %}error-404{% endblock %}
+
+
+{% block content %}
+<div class="error-404">
+    <div class="error-overlay">
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+            <div class="row">
+                <div class="col text-center error-overlay">
+                    <h1 class="display-4 logo-font text-black">
+                        Oops! Page not found.
+                    </h1>
+                    <p class="text-muted mt-3">
+                        Or maybe a plant ran off with it 🌱💨
+                    </p>
+                    <a href="{% url 'home' %}" 
+                       class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3 mt-3">
+                        Back Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

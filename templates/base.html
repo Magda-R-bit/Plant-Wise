@@ -39,6 +39,7 @@
   </head>
   <body>
     {% include 'includes/header.html' %}
+    <body class="{% block body_class %}{% endblock %}">
 
     {% if messages %}
       <div class="message-container">
