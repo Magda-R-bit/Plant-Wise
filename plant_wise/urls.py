@@ -36,4 +36,3 @@ urlpatterns = [
 
 handler404 = 'plant_wise.views.handler404'
 handler500 = 'plant_wise.views.handler500'
-
