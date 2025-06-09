@@ -46,31 +46,33 @@
   -  I created [GitHub Project](https://github.com/users/Magda-R-bit/projects/6) to help me manage tasks by moving them trough various stages from To Do, to In Progress, and finally to Done.
 
 
-  ![Screenshot of Kanban Board]()
-  ![Issue]()
+  ![Kanban Board User Story](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/UserStory.png)
+  ![Kanban Board Developer](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Developer.png)
+  ![Issue](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Issues.png)
 
 
 ### Wireframes
 
 - [Figma](https://www.figma.com/) (Used to create Wireframes)
 
-![Screenshot of Wireframes Home]()
-![Screenshot of Wireframes Shop]()
+![Screenshot of Wireframes Shop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Wireframe.png)
 
 
 ### Design
 
 #### Colour:
 
-The primary colours chosen for this website are green: #198754 and  #2d6a4f, for its association with nature, healthy green vegetables.
+The primary colours chosen for this website are green: #198754 and #2d6a4f, for its association with nature, healthy green vegetables.
 
-Green is often associated with relaxation and harmony, which aligns perfectly with the theme of wellness and self-care.
-
-![Navbar]()
-![Buttons]()
+Green is often associated with relaxation and harmony, which aligns perfectly with the theme of wellness and healthy organic food.
 
 
+![Buttons](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/198754.png)
+![Buttons](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/2d6a4f.png)
 
+The navbar and Footer uses Bootstrap's `bg-light` class, which applies a soft light-gray background (`#f8f9fa`) for a clean and minimalistic look.
+
+![Navbar](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Navbar.png)
 
 ## Features
 
