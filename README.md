@@ -74,6 +74,11 @@ The navbar and Footer uses Bootstrap's `bg-light` class, which applies a soft li
 
 ![Navbar](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Navbar.png)
 
+
+##  SEO & Marketing
+
+For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
+
 ## Features
 
 
