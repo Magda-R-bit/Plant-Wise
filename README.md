@@ -92,15 +92,15 @@ The navbar and Footer uses Bootstrap's `bg-light` class, which applies a soft li
 - Responsive Navbar with burger dropdown manu
 - Navigation options depend of user authentication
 
-![Navbar]()
-![Burger]()
+![Navbar](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FNavbar.png)
+![Burger](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FBurger.png)
 
 #### **Footer**
 
 - Responsive Footer with social media links and address
 
-![Footer Full]()
-![Footer]()
+![Footer Full](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FFooter.png)
+![Footer](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FFmob.png)
 
 
 
@@ -108,71 +108,107 @@ The navbar and Footer uses Bootstrap's `bg-light` class, which applies a soft li
 
 ##### User can start photo slider by clicking on the image
 
- ![Home Page]()
-
-####  **Contact Form**
+ ![Home Page](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FHome.png)
 
 
-
-![Form]()
 
 ####  **Shop**
 
 
+![Shop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FShop.png)
 
-![Shop]()
 
+### Product Detail
+
+![Product](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FProduct.png)
 
 #### **Vegetables**
 
 
-![Vegetables]()
-![Vegetables]()
+![Vegetables](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FVege.png)
+
 
 #### **Herbs**
 
 
+![Herbs](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FHerbs.png)
 
-![Herbs]()
-![Herbs]()
 
 
 #### **Flowers**
 
 
-![Flowers]()
-![Flowers]()
+![Flowers](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FFlowers.png)
 
 
-#### **Wish List**
+### Deals
 
-##### Wish List 
+![Deals](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FDeals.png)
 
-![wish List]()
-
-
-#### **Register Form**
-
-![Register]()
-
-
-#### **Log in Form**
-
-![Log in]()
 
 #### **Tips & Guides**
 
 ##### Tips
 
-![Tips]()
+![Tips](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FTips.png)
+![Tips Form](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FSubmit.png)
 
 ##### Guides
 
-![Guides]()
+![Guides](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FGuides.png)
+
+
+### About Page
+
+![About](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FAbout.png)
+
+####  **Contact Form**
+
+
+![Form](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FContact.png)
+
+
+### Search
+
+
+![Search](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FSearch.png)
+![Results](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FSResult.png)
+
+### Cart
+
+![Cart](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FCart.png)
+
+
+### Checkout
+
+![Checkout](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FCheckout.png)
+
+#### **Wish List**
+
+##### Wish List 
+
+![wish List](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FWishlist.png)
+
+
+
+#### **Register Form**
+
+![Register](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FRegister.png)
+
+
+#### **Log in Form**
+
+![Log in](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FLogin.png)
+
+
+### Profile
+
+![Profile](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FProfile.png)
+
 
 #### **Log Out**
 
-![Logout Form]()
+![Logout Form](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FLogout.png)
 
 #### **404 Error Page**
 
