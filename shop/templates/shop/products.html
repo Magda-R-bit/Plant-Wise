@@ -8,14 +8,14 @@
     <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
   </div>
 </div>
-<div class="container my-5">
+<div class="container-sm my-5">
   <div class="row">
     {% for product in products %}
-    <div class="col-md-4 mb-4">
+    <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
     <div class="card h-100 shadow-sm">
       <a href="{% url 'shop:product_detail' product.slug %}">
         <img src="{% if product.image %}{{ product.image.url }}{% else %}/media/products/default.jpg{% endif %}" 
-        class="card-img-top" 
+        class="card-img-top  img-fluid product-img" 
         alt="{{ product.slug|default:'Product image' }}">
       </a>
       {% for deal in active_deals %}
