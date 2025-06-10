@@ -217,11 +217,11 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 #### **404 Error Page**
 
-![404 Error]()
+![404 Error](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/404.png)
 
 #### **500 Error Page**
 
-![500 Error]()
+![500 Error](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/500.png)
 
 
 ### Future Features:
