@@ -57,6 +57,11 @@
 
 ![Screenshot of Wireframes Shop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Wireframe.png)
 
+### ERD Diagram
+
+- [Graphviz](https://graphviz.gitlab.io/download/) (ERD Generated using django-extensions and Graphviz to visualize the relationships between the models and improve the understanding of the database structure)
+
+[ERD Diagram](erd.png)
 
 ### Design
 
@@ -117,7 +122,7 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 
 
-####  **Shop**
+#### **Shop**
 
 
 ![Shop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FShop.png)
@@ -300,17 +305,6 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 * For more manual tests please refer to [Manual Testing](TESTING.md)
 
-
-### Automated Tests
-
-* Automated test created for booking app to test app functionality. All tests ok, no errors found.
-
-![Model Test]()
-
-
-* Tests Results
-
-![Tests Results]()
 
 ### Validation
 
