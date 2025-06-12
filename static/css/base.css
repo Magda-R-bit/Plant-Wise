@@ -87,6 +87,18 @@ h1, h2, h3, .site-title {
     margin-right: 10px;
 }
 
+/* Search */
+#searchForm {
+  display: none;
+}
+
+/* When toggled on */
+#searchForm.show {
+  display: block;
+  padding: 1rem 0;
+}
+
+
 /* Hero Section */
 .hero-section {
     background-image: url('/media/images/backgroundImg.jpg');
@@ -298,6 +310,15 @@ body.error-500 {
 
 
 /* Media Queries */
+
+@media (min-width: 992px) {
+  #searchForm form {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 @media (max-width: 1200px) {
     .navbar .form-control {
