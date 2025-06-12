@@ -7,6 +7,11 @@ from checkout.webhook_handler import StripeWH_Handler
 
 import stripe
 
+"""
+Code taken from Code Institute's Boutique Ado walkthrough
+https://github.com/Code-Institute-Solutions/boutique_ado_v1/blob/cdf3e76a67d03b6ed0e59d903869f04a0e1c4bb5/checkout/webhooks.py
+"""
+
 
 @require_POST
 @csrf_exempt
