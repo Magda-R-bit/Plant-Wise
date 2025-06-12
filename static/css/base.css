@@ -101,7 +101,7 @@ h1, h2, h3, .site-title {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('/media/images/backgroundImg.jpg');
+    background-image: url('https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/backgrWeb.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

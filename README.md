@@ -310,58 +310,65 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 - [HTML Validator](https://validator.w3.org/)
 
-base.html
 
-![Base HTML]()
+Home Page
 
-index.html
+![Home Page](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/ValHome.png)
 
-![Home Page]()
+Shop
 
-header.html
+![Shop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/ValSchop.png)
 
-![Navbar HTML]()
+About
 
-footer.html
+![About](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/ValAbout.png)
 
-![Footer  HTML]()
+Cart
+
+![Cart](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/ValCart.png)
+
+Checkout
+
+![Checkout](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/ValCheckout.png)
 
 404.html
 
-![Error Page]()
+![Error Page](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Val404.png)
 
-500.html
-
-![Error Page]()
 
 
 - [CSS Validator](https://validator.w3.org/#validate_by_input)
 
-![Base CSS]()
+![Base CSS](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/ValCSS.png)
+
 
 #### Python 
 
 To maintain clean, readable, and PEP8 compliant code throughout the project:
-   - [Black](https://pypi.org/project/black/) was used as an automatic code formatter. Since the project contains multiple Python files, Black ensured consistency and adherence to PEP8 standards across all files.
+
    - [Flake8](https://flake8.pycqa.org/en/latest/) was used as a Python linter to check for potencial errors and enforce coding standards.
 
-Special attention was given to views.py files for shop and checkout apps to ensure high quality code, so double checked these files with 
+Special attention was given to views.py files for shop, cart and checkout apps to ensure high quality code, so double checked these files with 
 [CI Python Linter](https://pep8ci.herokuapp.com/)
 
-![]()
+![Shop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/LinterS.png)
 
-![]()
+![Cart](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/LinterCV.png)
+
+![Checkout](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/LinterCHV.png)
 
 
 #### Lighthouse Testing
 
 Mobile
 
-![Lighthouse Mobile]()
+![Lighthouse Mobile](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/LightMob.png)
+
+Due to external libraries and technologies like Bootstrap, JQuery and Stripe, performance gets only yellow score. 
 
 Desktop
 
-![Lighthouse Desktop]()
+![Lighthouse Desktop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/LightD.png)
 
 
 ## Bugs
