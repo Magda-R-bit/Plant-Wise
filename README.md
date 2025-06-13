@@ -314,7 +314,14 @@ Wishlist access is always available from the navbar.
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) (Main code editor used for writing and testing this project)
 - [Gitpod](https://www.gitpod.io/) (Online development environment for coding and testing)
 
+### Stripe - Payment processing
 
+- [Stripe](https://stripe.com/)
+
+### Emails/Newsletter
+
+- [Gmail](https://mail.google.com/)
+- [Mailchimp](https://mailchimp.com/)
 
 ## Testing
   
@@ -432,6 +439,84 @@ Desktop
 * The project was developed using the Visual Studio Code, the Gitpod editor, and was pushed to GitHub in the remote repository Plant-Wise.
 * Git commands were used to push the code to the repository.
 
+#### Hosting images and static file with AWS
+
+- Create AWS account and go to AWS Management Console in the My Account dropdown
+- Find and access S3 and create a new bucket:
+
+    Under Object Ownership, check "ACLs enabled"
+
+    Uncheck "Block all public access" and acknowledge
+
+- Configur bucket settings:
+
+    Under **Properties**, enable Static Website Hosting
+
+    Under **Permissions**, copy the following code into CORS section:
+
+
+   
+    [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+    ]
+    
+
+    Under **Bucket policy**, go to Policy generator.
+
+    Bucket Type = S3 Bucket Policy
+
+    Principal = *
+
+    Actions = GetObject
+
+    Paste in ARN from bucket settings tab.
+
+    Click Add Statement, then Generate Policy.
+
+    Copy policy in paste into bucket policy editor. Also add ``/*`` onto the end of the resource key.
+
+    Click Save.
+
+    Under **Access control list (ACL)**, check "List" checkbox for "Everyone (public access)"
+
+- Create user to access bucket with IAM
+
+    In IAM, got to User Groups.
+
+    There create a group for a user, create an access policy giving the group access to the S3 bucket and assign the user to the group so it can use the policy to access all files. 
+
+- Connect Django to S3
+
+    Install packages "boto3" and "django-storages" and add ``'storages'`` to INSTALLED_APPS  in settings.py
+
+    Configure settings.py accordingly, including necessary AWS variables.
+
+    Add new config vars in Heroku app settings, including user credentials from AWS.
+
+    Create ``custom_storages.py`` file.
+
+- Upload static files and media files to S3
+
+
+#### Add Stripe keys to Heroku
+
+From Stripe account, under Developers > API keys copy Public Key and Secret Key and set as config vars in Heroku app settings.
+
+Create new Webhook endpoint for deployed site and enable all events.
+
+
+
 ### Deployment to Heroku
 
 * The project was deployed to Heroku with the following steps:
@@ -477,6 +562,7 @@ Desktop
 - [Dee Mc](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=1)
 - [Very Academy](https://www.youtube.com/watch?v=OgA0TTKAtqQ) - Wish List
 - [codepiep](https://www.youtube.com/watch?v=H8uvpvpas_U&t=913s) - Deals
+- [Kay-ddggxh](https://github.com/Kay-ddggxh/chirpy_chooks/blob/main/README.md) README Structure
 - Antonio Melé: ["Django 5 By Example"](https://books.google.ie/books/about/Django_5_By_Example.html?id=P-AEEQAAQBAJ&redir_esc=y)
 
 ### Media
