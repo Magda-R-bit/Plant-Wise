@@ -35,19 +35,22 @@
 
   To keep track of tasks and progress, I used a **Kanban board** to visually organize work, monitor the flow of tasks, and ensure that each feature was delivered efficiently.
 
-  1. Sprint Planning:
-
-  - I planned my tasks in sprints, typically lasting 1-2 weeks, to stay focused on specific goals. I focused first on functionality of my project. Each sprint would target the development of core features, like user authentication, adding and deleting products to the shop, adding tips and guides, updating and deleting. Adding products to the cart and testing checkout flow.
-
+  I created [GitHub Project](https://github.com/users/Magda-R-bit/projects/6) to help me manage tasks by moving them trough various stages from To Do, to In Progress, and finally to Done. 
   
+  The **Kanban board** was split into two distinct views to improve clarity and collaboration:
 
-  2. Kanban Board:
-
-  -  I created [GitHub Project](https://github.com/users/Magda-R-bit/projects/6) to help me manage tasks by moving them trough various stages from To Do, to In Progress, and finally to Done.
-
+   1. User Stories View
+   * Focused on high level features and functionality from the end user perspective.
 
   ![Kanban Board User Story](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/UserStory.png)
+
+   2. Developer Tasks View
+   * Broke down each user story into smaller, actionable development tasks. This helped in maintaining a clear separation between business objectives and technical implementation, while supporting better planning and prioritization.
+
   ![Kanban Board Developer](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Developer.png)
+
+  #### Issues
+
   ![Issue](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Issues.png)
 
 
@@ -100,7 +103,7 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 #### **Navigation**
 - Responsive Navbar with burger dropdown manu
-- Navigation options depend of user authentication
+- Navigation options depend on user authentication
 
 ![Navbar](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FNavbar.png)
 ![Burger](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FBurger.png)
@@ -116,7 +119,7 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 ####  **Home Page**
 
-##### User can start photo slider by clicking on the image
+User can go to the shop by scrolling on the image and clicking the arrow. This feature was designed to improve usability and guide users directly into the shopping expirience with minimal effort.
 
  ![Home Page](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FHome.png)
 
@@ -124,11 +127,15 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 #### **Shop**
 
+The Shop offers a nice selection of products, categorized into 3 categories: Vegetables, Herbs and Flowers.
+Users can browse all products or filter by category via the dropdown in the navigation bar.
 
 ![Shop](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FShop.png)
 
 
 ### Product Detail
+
+Each product has a dedicated detail page featuring a product image, description, price and add to cart functionality.
 
 ![Product](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FProduct.png)
 
@@ -153,10 +160,19 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 
 ### Deals
 
+A separate Deals section showcases discounted or promotional products. This gives users quick access to special offers and encourages return visits.
+
 ![Deals](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FDeals.png)
 
 
 #### **Tips & Guides**
+
+The Tips & Guides section is split into two areas:
+
+* Guides – Curated articles providing advice on gardening, planting, and sustainability.
+* User Tips – Community contributed tips to share knowledge and experience.
+
+Authenticated users can submit their own tips, creating a collaborative and helpful space.
 
 ##### Tips
 
@@ -185,17 +201,28 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 ![Results](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FSResult.png)
 
 ### Cart
+The cart icon in the navbar shows a live item count badge, improving visibility.
+On the Cart page, users can adjust product quantities, remove items, view total pricing with all deals applied  and how much saved on this deal.
+Automatically calculated subtotal and total.
+The cart includes clear information about delivery charges. Users are shown how much more they need to spend to qualify for free delivery, encouraging upselling and larger orders.
 
-![Cart](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FCart.png)
+![Cart](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/Cart.png)
 
 
 ### Checkout
+
+Checkout is simple and secure, collecting necessary shipping details.
+Feedback is provided on order completion to confirm successful purchase.
 
 ![Checkout](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FCheckout.png)
 
 #### **Wish List**
 
-##### Wish List 
+##### Wish List
+Logged-in users can add items to a personal wishlist.
+This allows users to save favorite products for later, encouraging return visits and improving engagement.
+
+Wishlist access is always available from the navbar.
 
 ![wish List](https://plant-wise.s3.eu-north-1.amazonaws.com/media/images/readMe/FWishlist.png)
 
@@ -258,7 +285,6 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 ### Backend and Server Tools
 
 - [Gunicorn](https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/gunicorn/) (Python HTTP server for WSGI applications)
-- [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/) (Serves static files efficiently in production)
 
 
 ### Django Libraries
@@ -266,16 +292,13 @@ For SEO & Marketing research please refer to [SEO and Marketing](MARKETING.md)
 - [django-allauth](https://django-allauth.readthedocs.io/en/latest/) (User authentication)
 - [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) (Control the rendering behaviour of Django forms)
 - [crispy-bootstrap5](https://pypi.org/project/crispy-bootstrap5/) (Support for crispy forms)
-- [django-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/) (Manages media and static files)
 - [django-resized](https://pypi.org/project/django-resized/) (Optimizes image resizing)
-- [django-richtextfield](https://pypi.org/project/django-richtextfield/) (Provides rich text editing, used in the admin for creating cabin descriptions)
 - [django-extensions](https://django-extensions.readthedocs.io/en/latest/) (Provides additional management commands, including graph_models for generating Entity Relationship Diagrams (ERD))
 
 
 ### Development & Code Formatting
 
 - [Pillow](https://pypi.org/project/Pillow/) (Python Imaging Library)
-- [Black](https://pypi.org/project/black/) (Python code formatter)
 - [Flake8](https://flake8.pycqa.org/en/latest/) (Python linter used for python code validation)
 
 
@@ -453,11 +476,11 @@ Desktop
 - [Boutique Ado Walkthrough Project](https://github.com/Magda-R-bit/boutique_ado_v1)
 - [Dee Mc](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=1)
 - [Very Academy](https://www.youtube.com/watch?v=OgA0TTKAtqQ) - Wish List
+- [codepiep](https://www.youtube.com/watch?v=H8uvpvpas_U&t=913s) - Deals
 - Antonio Melé: ["Django 5 By Example"](https://books.google.ie/books/about/Django_5_By_Example.html?id=P-AEEQAAQBAJ&redir_esc=y)
 
 ### Media
 
-- [Leonardo AI](https://leonardo.ai/) Used for creating Cabins images
 - [Unsplash](https://unsplash.com/s/photos/wild-nature) Used for all images.
 - [Freepik](https://www.freepik.com/) Used for images for error pages.
 - [Canva](https://www.canva.com/logos/) Used for creating Logo
