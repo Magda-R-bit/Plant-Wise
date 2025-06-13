@@ -40,7 +40,9 @@ To improve visibility on search engines, relevant keywords were identified using
 - ✅ Descriptive `alt` tags for all product and content images   
 - ✅ Meta titles and descriptions for key pages  
 - ✅ Mobile responsiveness (important for Google ranking)  
-- ✅ Fast loading speed via image compression and AWS S3  
+- ✅ Fast loading speed via image compression and AWS S3 
+- ✅ A robots.txt file is included to guide search engine crawlers. 
+- ✅ An automatically generated sitemap.xml provides structured access to all important pages, improving crawlability.
 
 ---
 
