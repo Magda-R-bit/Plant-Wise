@@ -88,13 +88,9 @@ h1, h2, h3, .site-title {
 }
 
 /* Search */
-#searchForm {
-  display: none;
-}
 
-/* When toggled on */
 #searchForm.show {
-  display: block;
+  display: block !important;
   padding: 1rem 0;
 }
 
